@@ -8,8 +8,8 @@
  * @property string $place_name
  * @property string $address
  * @property string $phone
- * @property double $lat
- * @property double $long
+ * @property double $latitude
+ * @property double $longitude
  * @property string $create_time
  * @property string $update_time
  */
@@ -31,12 +31,12 @@ class Place extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('lat, long', 'numerical'),
+			array('latitude, longitude', 'numerical'),
 			array('place_name, address, phone', 'length', 'max'=>255),
 			array('create_time, update_time', 'safe'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, place_name, address, phone, lat, long, create_time, update_time', 'safe', 'on'=>'search'),
+			array('id, place_name, address, phone, latitude, longitude, create_time, update_time', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -57,14 +57,14 @@ class Place extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'id' => 'ไอดี',
-			'place_name' => 'ชื่อสถานที่',
-			'address' => 'ที่อยู่',
-			'phone' => 'เบอร์โทรศัพท์',
-			'lat' => 'ละติจูด',
-			'long' => 'ลองติจูด',
-			'create_time' => 'เวลาสร้าง',
-			'update_time' => 'เวลาอัพเดท',
+			'id' => 'ID',
+			'place_name' => 'Place Name',
+			'address' => 'Address',
+			'phone' => 'Phone',
+			'latitude' => 'Latitude',
+			'longitude' => 'Longitude',
+			'create_time' => 'Create Time',
+			'update_time' => 'Update Time',
 		);
 	}
 
@@ -90,8 +90,8 @@ class Place extends CActiveRecord
 		$criteria->compare('place_name',$this->place_name,true);
 		$criteria->compare('address',$this->address,true);
 		$criteria->compare('phone',$this->phone,true);
-		$criteria->compare('lat',$this->lat);
-		$criteria->compare('long',$this->long);
+		$criteria->compare('latitude',$this->latitude);
+		$criteria->compare('longitude',$this->longitude);
 		$criteria->compare('create_time',$this->create_time,true);
 		$criteria->compare('update_time',$this->update_time,true);
 

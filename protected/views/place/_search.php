@@ -19,9 +19,9 @@
 
                     <?php echo $form->textFieldControlGroup($model,'phone',array('span'=>5,'maxlength'=>255)); ?>
 
-                    <?php echo $form->textFieldControlGroup($model,'lat',array('span'=>5)); ?>
+                    <?php echo $form->textFieldControlGroup($model,'latitude',array('span'=>5)); ?>
 
-                    <?php echo $form->textFieldControlGroup($model,'long',array('span'=>5)); ?>
+                    <?php echo $form->textFieldControlGroup($model,'longitude',array('span'=>5)); ?>
 
                     <?php echo $form->textFieldControlGroup($model,'create_time',array('span'=>5)); ?>
 

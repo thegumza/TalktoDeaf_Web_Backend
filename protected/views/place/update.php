@@ -4,11 +4,11 @@
 ?>
 
 <?php
-/* $this->breadcrumbs=array(
+$this->breadcrumbs=array(
 	'Places'=>array('index'),
 	$model->id=>array('view','id'=>$model->id),
 	'Update',
-); */
+);
 
 $this->menu=array(
 	array('label'=>'List Place', 'url'=>array('index')),
@@ -18,7 +18,7 @@ $this->menu=array(
 );
 ?>
 
-    <h1>อัพเดท ข้อมุลสถานที่ <?php echo $model->id; ?></h1>
+    <h1>อัพเดท ข้อมูลสถานที่ <?php echo $model->id; ?></h1>
 
 <?php
 /* @var $this PlaceController */
@@ -47,16 +47,12 @@ $this->menu=array(
 
             <?php echo $form->textFieldControlGroup($model,'phone',array('span'=>5,'maxlength'=>255)); ?>
 
-            <?php echo $form->textFieldControlGroup($model,'lat',array('span'=>5)); ?>
+            <?php echo $form->textFieldControlGroup($model,'latitude',array('span'=>5)); ?>
 
-            <?php echo $form->textFieldControlGroup($model,'long',array('span'=>5)); ?>
-
-            <?php echo $form->textFieldControlGroup($model,'create_time',array('span'=>5)); ?>
-
-            <?php echo $form->textFieldControlGroup($model,'update_time',array('span'=>5)); ?>
+            <?php echo $form->textFieldControlGroup($model,'longitude',array('span'=>5)); ?>
 
             <?php echo $form->hiddenField($model, 'update_time'); ?>
-            
+
         <div class="form-actions">
         <?php echo TbHtml::submitButton($model->isNewRecord ? 'Create' : 'Save',array(
 		    'color'=>TbHtml::BUTTON_COLOR_PRIMARY,
@@ -66,4 +62,4 @@ $this->menu=array(
 
     <?php $this->endWidget(); ?>
 
-    
+</div><!-- form -->

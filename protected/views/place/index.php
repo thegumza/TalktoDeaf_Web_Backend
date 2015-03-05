@@ -4,9 +4,9 @@
 ?>
 
 <?php
-/* $this->breadcrumbs=array(
+$this->breadcrumbs=array(
 	'Places',
-); */
+);
 
 $this->menu=array(
 	array('label'=>'Create Place','url'=>array('create')),

@@ -4,10 +4,10 @@
 ?>
 
 <?php
-/* $this->breadcrumbs=array(
+$this->breadcrumbs=array(
 	'Places'=>array('index'),
 	$model->id,
-); */
+);
 
 $this->menu=array(
 	array('label'=>'List Place', 'url'=>array('index')),
@@ -30,8 +30,8 @@ $this->menu=array(
 		'place_name',
 		'address',
 		'phone',
-		'lat',
-		'long',
+		'latitude',
+		'longitude',
 		'create_time',
 		'update_time',
 	),

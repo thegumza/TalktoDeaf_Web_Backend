@@ -3,10 +3,10 @@
 /* @var $model Place */
 
 
-/* $this->breadcrumbs=array(
+$this->breadcrumbs=array(
 	'Places'=>array('index'),
 	'Manage',
-); */
+);
 
 $this->menu=array(
 	array('label'=>'List Place', 'url'=>array('index')),
@@ -51,8 +51,8 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 		'place_name',
 		'address',
 		'phone',
-		'lat',
-		'long',
+		'latitude',
+		'longitude',
 		/*
 		'create_time',
 		'update_time',

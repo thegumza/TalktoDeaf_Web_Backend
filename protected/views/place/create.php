@@ -4,11 +4,11 @@
 ?>
 
 <?php
-/* $this->breadcrumbs=array(
+$this->breadcrumbs=array(
 	'Places'=>array('index'),
 	'Create',
 );
- */
+
 $this->menu=array(
 	array('label'=>'List Place', 'url'=>array('index')),
 	array('label'=>'Manage Place', 'url'=>array('admin')),
@@ -44,13 +44,12 @@ $this->menu=array(
 
             <?php echo $form->textFieldControlGroup($model,'phone',array('span'=>5,'maxlength'=>255)); ?>
 
-            <?php echo $form->textFieldControlGroup($model,'lat',array('span'=>5)); ?>
+            <?php echo $form->textFieldControlGroup($model,'latitude',array('span'=>5)); ?>
 
-            <?php echo $form->textFieldControlGroup($model,'long',array('span'=>5)); ?>
+            <?php echo $form->textFieldControlGroup($model,'longitude',array('span'=>5)); ?>
 
+			<?php echo $form->hiddenField($model, 'create_time'); ?>
 
-            <?php echo $form->hiddenField($model, 'create_time'); ?>
-            
         <div class="form-actions">
         <?php echo TbHtml::submitButton($model->isNewRecord ? 'Create' : 'Save',array(
 		    'color'=>TbHtml::BUTTON_COLOR_PRIMARY,

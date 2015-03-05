@@ -21,12 +21,12 @@
 	<?php echo CHtml::encode($data->phone); ?>
 	<br />
 
-	<b><?php echo CHtml::encode($data->getAttributeLabel('lat')); ?>:</b>
-	<?php echo CHtml::encode($data->lat); ?>
+	<b><?php echo CHtml::encode($data->getAttributeLabel('latitude')); ?>:</b>
+	<?php echo CHtml::encode($data->latitude); ?>
 	<br />
 
-	<b><?php echo CHtml::encode($data->getAttributeLabel('long')); ?>:</b>
-	<?php echo CHtml::encode($data->long); ?>
+	<b><?php echo CHtml::encode($data->getAttributeLabel('longitude')); ?>:</b>
+	<?php echo CHtml::encode($data->longitude); ?>
 	<br />
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('create_time')); ?>:</b>
