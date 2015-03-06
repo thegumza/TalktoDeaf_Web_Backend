@@ -4,11 +4,11 @@
 ?>
 
 <?php
-$this->breadcrumbs=array(
+/* $this->breadcrumbs=array(
 	'Places'=>array('index'),
 	$model->id=>array('view','id'=>$model->id),
 	'Update',
-);
+); */
 
 $this->menu=array(
 	array('label'=>'List Place', 'url'=>array('index')),

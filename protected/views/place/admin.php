@@ -3,10 +3,10 @@
 /* @var $model Place */
 
 
-$this->breadcrumbs=array(
+/* $this->breadcrumbs=array(
 	'Places'=>array('index'),
 	'Manage',
-);
+); */
 
 $this->menu=array(
 	array('label'=>'List Place', 'url'=>array('index')),

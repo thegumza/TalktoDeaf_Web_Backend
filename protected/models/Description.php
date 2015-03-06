@@ -40,6 +40,7 @@ class Description extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
+				'vocabularys' => array(self::HAS_ONE, 'Vocabulary', 'des_id'),
 		);
 	}
 
@@ -50,7 +51,7 @@ class Description extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'des_name' => 'Des Name',
+			'des_name' => 'รายละเอียดคำศัพท์',
 		);
 	}
 

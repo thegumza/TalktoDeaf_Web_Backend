@@ -35,35 +35,45 @@ $this->menu=array(
 )); ?>
 
     <p class="help-block">Fields with <span class="required">*</span> are required.</p>
-
-    <?php echo $form->errorSummary($model); ?>
+    
+	<?php echo $form->errorSummary($description); ?>
+	
+    <?php echo $form->errorSummary($vocabulary); ?>
+    
+    <?php echo $form->errorSummary($example); ?>
+    
+    <?php //echo $form->errorSummary($category); ?>
     
 	
-            <?php echo $form->textFieldControlGroup($model,'voc_name',array('span'=>5,'maxlength'=>56)); ?>
+            <?php echo $form->textFieldControlGroup($vocabulary,'voc_name',array('span'=>5,'maxlength'=>56)); ?>
 
-            <?php echo $form->textFieldControlGroup($model,'des_id',array('span'=>5)); ?>
+            <?php echo $form->textAreaControlGroup($description,'des_name',array('span'=>5)); ?>
 
-            <?php echo $form->textFieldControlGroup($model,'video_id',array('span'=>5)); ?>
+            <?php //echo $form->textFieldControlGroup($vocabulary,'video_id',array('span'=>5)); ?>
             
             
             
-            <p>หมวด</p>
+            
+    <?php echo $form->labelEx($vocabulary,'category_id'); ?>
+    <?php echo $form->dropdownList($vocabulary,'category_id', CHtml::listData(Category::model()->findAll(),'id','cat_name'), array('prompt'=>'กรุณาเลือกหมวด')); ?>
+    <?php echo $form->error($vocabulary,'category.cat_name'); ?>
+    
             <?php 
-            		$records = Category::model()->findAll();
-    			  	$list = CHtml::listData($records, 'id', 'cat_name');
-    			  echo CHtml::dropDownList('$vocabulary','category_id', $list, array('empty' => '(กรุณาเลือกหมวดของคำ)')); ?><BR>
+            		//$category = Category::model()->findAll();
+    			  	//$list = CHtml::listData($category, 'id', 'cat_name');
+    			  //echo CHtml::dropDownList('$vocabulary','category_id', $list, array('empty' => '(กรุณาเลือกหมวดของคำ)')); ?><BR>
+			
 			<p>ประเภท</p>
     		<?php 
-            	$records = Type::model()->findAll();
-    			  $list = CHtml::listData($records, 'id', 'type_name');
-    			  echo CHtml::dropDownList('$vocabulary','type_id', $list, array('empty' => '(กรุณาเลือกประเภทของคำ)')); ?>
+            	//$records = Type::model()->findAll();
+    			  //$list = CHtml::listData($records, 'id', 'type_name');
+    			  //echo CHtml::dropDownList('$vocabulary','type_id', $list, array('empty' => '(กรุณาเลือกประเภทของคำ)')); ?>
     			  
 		
-	
 			
-            <?php echo $form->textAreaControlGroup($model,'example_id',array('span'=>5)); ?>
+            <?php echo $form->textAreaControlGroup($example,'exam',array('span'=>5)); ?>
             
-			<?php echo $form->hiddenField($model, 'create_time'); ?>
+			<?php //echo $form->hiddenField($vocabulary, 'create_time'); ?>
 			
             <?php //echo $form->textFieldControlGroup($model,'img_id',array('span'=>5)); ?>
 
@@ -72,7 +82,7 @@ $this->menu=array(
             <?php //echo $form->textFieldControlGroup($model,'update_time',array('span'=>5)); ?>
 
         <div class="form-actions">
-        <?php echo TbHtml::submitButton($model->isNewRecord ? 'Create' : 'Save',array(
+        <?php echo TbHtml::submitButton($vocabulary->isNewRecord ? 'Create' : 'Save',array(
 		    'color'=>TbHtml::BUTTON_COLOR_PRIMARY,
 		    'size'=>TbHtml::BUTTON_SIZE_LARGE,
 		)); ?>

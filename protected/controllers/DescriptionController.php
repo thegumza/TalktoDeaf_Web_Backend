@@ -52,7 +52,7 @@ class DescriptionController extends Controller
 	public function actionView($id)
 	{
 		$this->render('view',array(
-			'model'=>$this->loadModel($id),
+			'description'=>$this->loadModel($id),
 		));
 	}
 
@@ -62,20 +62,28 @@ class DescriptionController extends Controller
 	 */
 	public function actionCreate()
 	{
-		$model=new Description;
-
+		$vocabulary = new Vocabulary;
+		$description = new Description;
+		
+		$vocabulary->create_time = date("Y-m-d H:i");
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
-
+	
 		if (isset($_POST['Description'])) {
-			$model->attributes=$_POST['Description'];
-			if ($model->save()) {
-				$this->redirect(array('view','id'=>$model->id));
+			
+			$description->attributes=$_POST['Description'];
+			$vocabulary->attributes=$_POST['Vocabulary'];
+			
+			$vocabulary->des_id = $description->id;
+			if (($vocabulary->save(false))&&($description->save(false))) {
+				$this->redirect(array('view','id'=>$description->id));
 			}
 		}
-
+	
 		$this->render('create',array(
-			'model'=>$model,
+				'description'=>$description,
+				'vocabulary'=>$vocabulary,
+				
 		));
 	}
 

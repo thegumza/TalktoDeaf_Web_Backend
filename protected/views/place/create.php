@@ -4,15 +4,15 @@
 ?>
 
 <?php
-$this->breadcrumbs=array(
+/* $this->breadcrumbs=array(
 	'Places'=>array('index'),
 	'Create',
-);
+); */
 
 $this->menu=array(
 	array('label'=>'List Place', 'url'=>array('index')),
 	array('label'=>'Manage Place', 'url'=>array('admin')),
-);
+); 
 ?>
 
 <h1>สร้าง ข้อมูลสถานที่</h1>

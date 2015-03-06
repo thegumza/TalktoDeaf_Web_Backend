@@ -52,7 +52,7 @@ class VocabularyController extends Controller
 	public function actionView($id)
 	{
 		$this->render('view',array(
-			'model'=>$this->loadModel($id),
+			'vocabulary'=>$this->loadModel($id),
 		));
 	}
 
@@ -63,67 +63,48 @@ class VocabularyController extends Controller
 
 	public function actionCreate()
 	{
-		$model=new Vocabulary;
-		$model->create_time = date("Y-m-d H:i");
-		// Uncomment the following line if AJAX validation is needed
-		// $this->performAjaxValidation($model);
-	
-		if (isset($_POST['Vocabulary'])) {
-			
-			$model->attributes=$_POST['Vocabulary'];
-			if ($model->save()) {
-				$this->redirect(array('view','id'=>$model->id));
-			}
-		}
-	
-		$this->render('create',array(
-				'model'=>$model,
-		));
-	}
-	/* public function actionCreate()
-	{
-		
 		$vocabulary = new Vocabulary;
-		$video = new Video;
+		$description = new Description;
+		$example = new Example;
+		//$category = new Category;
+		
 		
 		$vocabulary->create_time = date("Y-m-d H:i");
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
-
-		if (isset($_POST['Vocabulary'], $_POST['Video'])) {
+		
+		if (isset($_POST['Vocabulary'])) {
 			
+			//$category->attributes=$_POST['Category'];
+			$description->attributes=$_POST['Description'];
 			$vocabulary->attributes=$_POST['Vocabulary'];
-			$video->attributes=$_POST['Video'];
-			if($vocabulary->save(false))
-			{
-				// use false parameter to disable validation
-				$vocabulary->video_id = $video->id;
-				// ...redirect to another page
-			}
-			if ($vocabulary->save()) {
-				$this->redirect(array('view','id'=>$vocabulary->id));
-			}
-			}
+			$example->attributes=$_POST['Example'];
+			//$vocabulary->category_id;
+		if ($description->save() && $example->save() && $vocabulary->save()){
 			
-			$this->render('create', array(
-					'vocabulary'=>$vocabulary,
-					'video'=>$video,
-			)); */
-			/* if ($vocabulary->save()) {
+				//$vocabulary->category_id = $category-> id;
+   				$vocabulary->des_id = $description-> id;
+   				$vocabulary->example_id = $example-> id;
+   				
+   				//$vocabulary->category_id;
+   				
+   				$vocabulary->save();
+   				$this->redirect(array('view','id'=>$vocabulary->id));
+					}
 				
-				$vocabulary->video_id = $video->id;
-				
-				$this->redirect(array('view','id'=>$vocabulary->id));
-				
-			}
+			
 		}
-
+	
 		$this->render('create',array(
-			'vocabulary'=>$vocabulary,
-			'video'=>$video,
-		)); 
-	}*/
-
+				
+				//'category'=>$category,
+				'description'=>$description,
+				'vocabulary'=>$vocabulary,
+				'example'=>$example,
+				
+		));
+	}
+	
 	/**
 	 * Updates a particular model.
 	 * If update is successful, the browser will be redirected to the 'view' page.
