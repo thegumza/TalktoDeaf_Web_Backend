@@ -55,20 +55,18 @@ $this->menu=array(
             
             
     <?php echo $form->labelEx($vocabulary,'category_id'); ?>
-    <?php echo $form->dropdownList($vocabulary,'category_id', CHtml::listData(Category::model()->findAll(),'id','cat_name'), array('prompt'=>'กรุณาเลือกหมวด')); ?>
+    
+    <?php echo $form->dropdownList($vocabulary,'category_id', 
+    		CHtml::listData(Category::model()->findAll(),'id','cat_name'), 
+    		array('prompt'=>'กรุณาเลือกหมวด')); ?>
     <?php echo $form->error($vocabulary,'category.cat_name'); ?>
     
-            <?php 
-            		//$category = Category::model()->findAll();
-    			  	//$list = CHtml::listData($category, 'id', 'cat_name');
-    			  //echo CHtml::dropDownList('$vocabulary','category_id', $list, array('empty' => '(กรุณาเลือกหมวดของคำ)')); ?><BR>
-			
-			<p>ประเภท</p>
-    		<?php 
-            	//$records = Type::model()->findAll();
-    			  //$list = CHtml::listData($records, 'id', 'type_name');
-    			  //echo CHtml::dropDownList('$vocabulary','type_id', $list, array('empty' => '(กรุณาเลือกประเภทของคำ)')); ?>
-    			  
+    
+    <?php echo $form->labelEx($vocabulary,'type_id'); ?>
+             <?php echo $form->dropdownList($vocabulary,'type_id', 
+    		CHtml::listData(Type::model()->findAll(),'id','type_name'), 
+    		array('prompt'=>'กรุณาเลือกประเภท')); ?>
+    <?php echo $form->error($vocabulary,'type.type_name'); ?>
 		
 			
             <?php echo $form->textAreaControlGroup($example,'exam',array('span'=>5)); ?>

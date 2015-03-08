@@ -33,8 +33,9 @@ class Vocabulary extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			//array('des_id, video_id, category_id, type_id, example_id, img_id', 'numerical', 'integerOnly'=>true),
+			
 			array('voc_name', 'length', 'max'=>56),
+			array('category_id,type_id', 'required'),
 			array('create_time, update_time', 'safe'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.

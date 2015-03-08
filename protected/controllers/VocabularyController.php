@@ -80,7 +80,7 @@ class VocabularyController extends Controller
 			$vocabulary->attributes=$_POST['Vocabulary'];
 			$example->attributes=$_POST['Example'];
 			//$vocabulary->category_id;
-		if ($description->save() && $example->save() && $vocabulary->save()){
+		if ($description->save() && $example->save() ){
 			
 				//$vocabulary->category_id = $category-> id;
    				$vocabulary->des_id = $description-> id;
