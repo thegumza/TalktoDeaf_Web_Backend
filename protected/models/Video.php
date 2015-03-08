@@ -33,6 +33,7 @@ class Video extends CActiveRecord
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('id, vid_name, vid_path, create_time, update_time', 'safe', 'on'=>'search'),
+				array('vid_name', 'file', 'types'=>'mp4, mov'),
 		);
 	}
 

@@ -66,7 +66,7 @@ class VocabularyController extends Controller
 		$vocabulary = new Vocabulary;
 		$description = new Description;
 		$example = new Example;
-		//$category = new Category;
+		$video = new Video;
 		
 		
 		$vocabulary->create_time = date("Y-m-d H:i");
@@ -75,18 +75,31 @@ class VocabularyController extends Controller
 		
 		if (isset($_POST['Vocabulary'])) {
 			
-			//$category->attributes=$_POST['Category'];
 			$description->attributes=$_POST['Description'];
 			$vocabulary->attributes=$_POST['Vocabulary'];
 			$example->attributes=$_POST['Example'];
-			//$vocabulary->category_id;
-		if ($description->save() && $example->save() ){
+			$video->attributes=$_POST['Video'];
 			
-				//$vocabulary->category_id = $category-> id;
+			if ($vid_name = CUploadedFile::getInstance ( $video, 'vid_name' )) {
+				// path for file upload
+				$path = Yii::getPathOfAlias ( 'webroot' ) . '/actionvideos/';
+				
+				// use image name as username
+				$filename = $vid_name;
+				// uploaded image to path
+				$vid_name->saveAs ( $path . $filename );
+			} else
+				// this for no image file upload
+				$filename = 'noimage.jpg';
+			// set another user attribute
+			$video->vid_name = $filename;
+			
+			
+		if ($description->save() && $example->save() && $video->save()){
+			
    				$vocabulary->des_id = $description-> id;
    				$vocabulary->example_id = $example-> id;
-   				
-   				//$vocabulary->category_id;
+   				$vocabulary->video_id = $video-> id;
    				
    				$vocabulary->save();
    				$this->redirect(array('view','id'=>$vocabulary->id));
@@ -97,10 +110,10 @@ class VocabularyController extends Controller
 	
 		$this->render('create',array(
 				
-				//'category'=>$category,
 				'description'=>$description,
 				'vocabulary'=>$vocabulary,
 				'example'=>$example,
+				'video'=>$video,
 				
 		));
 	}

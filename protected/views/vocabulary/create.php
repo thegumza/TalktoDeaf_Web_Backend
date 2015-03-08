@@ -27,6 +27,7 @@ $this->menu=array(
 
     <?php $form=$this->beginWidget('bootstrap.widgets.TbActiveForm', array(
 	'id'=>'vocabulary-form',
+    'htmlOptions'=>array('enctype'=>'multipart/form-data'),
 	// Please note: When you enable ajax validation, make sure the corresponding
 	// controller action is handling ajax validation correctly.
 	// There is a call to performAjaxValidation() commented in generated controller code.
@@ -42,7 +43,7 @@ $this->menu=array(
     
     <?php echo $form->errorSummary($example); ?>
     
-    <?php //echo $form->errorSummary($category); ?>
+    <?php echo $form->errorSummary($video); ?>
     
 	
             <?php echo $form->textFieldControlGroup($vocabulary,'voc_name',array('span'=>5,'maxlength'=>56)); ?>
@@ -71,6 +72,12 @@ $this->menu=array(
 			
             <?php echo $form->textAreaControlGroup($example,'exam',array('span'=>5)); ?>
             
+            <?php 	echo $form->labelEx($video, 'vid_name');
+					echo $form->fileField($video, 'vid_name');
+					echo $form->error($video, 'vid_name'); 
+					?>
+					
+					
 			<?php //echo $form->hiddenField($vocabulary, 'create_time'); ?>
 			
             <?php //echo $form->textFieldControlGroup($model,'img_id',array('span'=>5)); ?>

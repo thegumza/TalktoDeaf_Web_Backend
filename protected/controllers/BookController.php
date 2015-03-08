@@ -84,9 +84,6 @@ class BookController extends Controller
 			// set another user attribute
 			$model->book_image = $filename;
 			
-			//$model->attributes=$_POST['Book'];
-			//$model->book_image=CUploadedFile::getInstance($model,'book_image');
-			
 			if ($model->save()) {
 				//$model->book_image->saveAs('$imagePath');
 				$this->redirect(array('view','id'=>$model->id));
