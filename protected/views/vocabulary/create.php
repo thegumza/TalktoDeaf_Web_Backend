@@ -14,7 +14,7 @@ $this->menu=array(
 	array('label'=>'Manage Vocabulary', 'url'=>array('admin')),
 );
 ?>
-
+<h1>สร้าง คำศัพท์</h1>
 <?php
 /* @var $this VocabularyController */
 /* @var $model Vocabulary */
