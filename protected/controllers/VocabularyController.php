@@ -53,7 +53,7 @@ class VocabularyController extends Controller
 	public function actionView($id)
 	{
 		$this->render('view',array(
-			'model'=>$this->loadModel($id),
+			'vocabulary'=>$this->loadModel($id),
 		));
 	}
 
@@ -149,7 +149,7 @@ class VocabularyController extends Controller
 		
 		
 		
-		$vocabulary->create_time = date("Y-m-d H:i");
+		$vocabulary->update_time = date("Y-m-d H:i");
 		
 		if (isset($_POST['Vocabulary'])) {
 				
@@ -247,10 +247,15 @@ class VocabularyController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('Vocabulary');
-		$this->render('index',array(
-			'dataProvider'=>$dataProvider,
-		));
+        $model=new Vocabulary('search');
+        $model->unsetAttributes();  // clear any default values
+        if (isset($_GET['Vocabulary'])) {
+            $model->attributes=$_GET['Vocabulary'];
+        }
+
+        $this->render('admin',array(
+            'model'=>$model,
+        ));
 	}
 
 	/**

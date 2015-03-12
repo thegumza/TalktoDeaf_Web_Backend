@@ -10,9 +10,10 @@
 ); */
 
 $this->menu=array(
-	array('label'=>'List Vocabulary', 'url'=>array('index')),
+	//array('label'=>'List Vocabulary', 'url'=>array('index')),
 	array('label'=>'Manage Vocabulary', 'url'=>array('admin')),
 );
+
 ?>
 <h1>สร้าง คำศัพท์</h1>
 <?php
@@ -84,7 +85,7 @@ $this->menu=array(
 					
 
         <div class="form-actions">
-        <?php echo TbHtml::submitButton($vocabulary->isNewRecord ? 'Create' : 'Save',array(
+        <?php  echo TbHtml::submitButton($vocabulary->isNewRecord ? 'Create' : 'Save',array(
 		    'color'=>TbHtml::BUTTON_COLOR_PRIMARY,
 		    'size'=>TbHtml::BUTTON_SIZE_LARGE,
 		)); ?>

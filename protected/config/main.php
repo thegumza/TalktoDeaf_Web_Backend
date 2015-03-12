@@ -5,6 +5,7 @@
 
 // This is the main Web application configuration. Any writable
 // CWebApplication properties can be configured here.
+Yii::setPathOfAlias('yiibootflat', realpath(__DIR__ . '/../extensions/yiibootflat'));
 return array(
 	'basePath'=>dirname(__FILE__).DIRECTORY_SEPARATOR.'..',
 		
@@ -51,7 +52,9 @@ return array(
 		),
 		 'bootstrap' => array(
 			'class' => 'bootstrap.components.TbApi',
-		), 
+		),
+        'yiibootflat' => array(
+            'class' => 'yiibootflat.components.YbfComponent'),
 			/* 'booster' => array(
 					'class' => 'path.alias.to.booster.components.Booster',
 			), */

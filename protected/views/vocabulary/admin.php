@@ -9,7 +9,7 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List Vocabulary', 'url'=>array('index')),
+	//array('label'=>'List Vocabulary', 'url'=>array('index')),
 	array('label'=>'Create Vocabulary', 'url'=>array('create')),
 );
 
@@ -47,19 +47,19 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 	'dataProvider'=>$model->search(),
 	'filter'=>$model,
 	'columns'=>array(
-		'id',
-		'voc_name',
-		'voc_engname',
-		/*'des_id',
-		 'action_video_id',
-		'speak_video_id',
-		
-		'category_id',
-		'type_id',
-		'example_id',
-		'img_id',
-		'create_time',
-		'update_time', */
+        'id',
+        'voc_name',
+        'voc_engname',
+        'category.cat_name',
+        'type.type_name',
+        'description.des_name',
+        //'actionvideo.vid_name',
+        //'speakvideo.vid_name',
+
+        'example.exam',
+        //'img_id',
+        //'create_time',
+        //'update_time',
 		
 		array(
 			'class'=>'bootstrap.widgets.TbButtonColumn',
