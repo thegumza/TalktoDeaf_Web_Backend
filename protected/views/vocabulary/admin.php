@@ -3,10 +3,10 @@
 /* @var $model Vocabulary */
 
 
-$this->breadcrumbs=array(
+/*$this->breadcrumbs=array(
 	'Vocabularies'=>array('index'),
 	'Manage',
-);
+);*/
 
 $this->menu=array(
 	//array('label'=>'List Vocabulary', 'url'=>array('index')),
@@ -35,8 +35,7 @@ $('.search-form form').submit(function(){
 or <b>=</b>) at the beginning of each of your search values to specify how the comparison should be done.
 </p>
 
-<?php echo CHtml::link('Advanced Search','#',array('class'=>'search-button btn')); ?>
-<div class="search-form" style="display:none">
+
 <?php $this->renderPartial('_search',array(
 	'model'=>$model,
 )); ?>
@@ -45,22 +44,22 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 <?php $this->widget('bootstrap.widgets.TbGridView',array(
 	'id'=>'vocabulary-grid',
 	'dataProvider'=>$model->search(),
-	'filter'=>$model,
+	//'filter'=>$model,
 	'columns'=>array(
-        'id',
-        'voc_name',
-        'voc_engname',
-        'category.cat_name',
-        'type.type_name',
-        'description.des_name',
-        //'actionvideo.vid_name',
-        //'speakvideo.vid_name',
-
-        'example.exam',
-        //'img_id',
-        //'create_time',
-        //'update_time',
-		
+        array('name'=>'id',
+            'htmlOptions'=>array('style'=>'width: 30px')),
+        array('name'=>'voc_name',
+            'htmlOptions'=>array('style'=>'width: 70px')),
+        array('name'=>'voc_engname',
+            'htmlOptions'=>array('style'=>'width: 70px')),
+        array('name'=>'category.cat_name',
+            'htmlOptions'=>array('style'=>'width: 50px')),
+        array('name'=>'type.type_name',
+            'htmlOptions'=>array('style'=>'width: 50px')),
+        array('name'=>'description.des_name',
+            'htmlOptions'=>array('style'=>'width: 250px')),
+        array('name'=>'example.exam',
+            'htmlOptions'=>array('style'=>'width: 250px')),
 		array(
 			'class'=>'bootstrap.widgets.TbButtonColumn',
 		),

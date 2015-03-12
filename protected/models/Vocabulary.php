@@ -70,8 +70,8 @@ class Vocabulary extends CActiveRecord
 	{
 		return array(
 			'id' => 'ไอดี',
-			'voc_name' => 'ชื่อคำศัพท์',
-			'voc_engname' => 'ชื่อคำศัพท์ภาษาอังกฤษ',
+			'voc_name' => 'คำศัพท์',
+			'voc_engname' => 'คำศัพท์ภาษาอังกฤษ',
 			'des_id' => 'ความหมาย',
 			'action_video_id' => 'วิดีโอท่าทาง',
 			'speak_video_id' => 'วิดีโอพูด',

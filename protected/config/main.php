@@ -13,7 +13,7 @@ return array(
 	'timeZone'=>'Asia/Bangkok',
 	'sourceLanguage'=>'th',
 	'language'=>'th',
-	'theme'=>'bootflat',
+	'theme'=>'hebo',
 	// preloading 'log' component
 	'preload'=>array('log'),
 		 'aliases' => array(
