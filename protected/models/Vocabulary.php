@@ -65,18 +65,18 @@ class Vocabulary extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'id' => 'ID',
-			'voc_name' => 'Voc Name',
-			'voc_engname' => 'Voc Engname',
-			'des_id' => 'Des',
-			'action_video_id' => 'Action Video',
-			'speak_video_id' => 'Speak Video',
-			'category_id' => 'Category',
-			'type_id' => 'Type',
-			'example_id' => 'Example',
-			'img_id' => 'Img',
-			'create_time' => 'Create Time',
-			'update_time' => 'Update Time',
+			'id' => 'ไอดี',
+			'voc_name' => 'ชื่อคำศัพท์',
+			'voc_engname' => 'ชื่อคำศัพท์ภาษาอังกฤษ',
+			'des_id' => 'ความหมาย',
+			'action_video_id' => 'วิดีโอท่าทาง',
+			'speak_video_id' => 'วิดีโอพูด',
+			'category_id' => 'หมวด',
+			'type_id' => 'ประเภท',
+			'example_id' => 'ประโยคตัวอย่าง',
+			'img_id' => 'รูปภาพ',
+			'create_time' => 'เวลาสร้าง',
+			'update_time' => 'เวลาอัพเดท',
 		);
 	}
 

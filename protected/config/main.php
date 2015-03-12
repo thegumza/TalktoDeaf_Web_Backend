@@ -7,24 +7,27 @@
 // CWebApplication properties can be configured here.
 return array(
 	'basePath'=>dirname(__FILE__).DIRECTORY_SEPARATOR.'..',
+		
 	'name'=>'พูดผ่านภาษามือ',
 	'timeZone'=>'Asia/Bangkok',
 	'sourceLanguage'=>'th',
 	'language'=>'th',
+	'theme'=>'bootflat',
 	// preloading 'log' component
 	'preload'=>array('log'),
-		'aliases' => array(
+		 'aliases' => array(
 				'bootstrap' => realpath(__DIR__ . '/../extensions/bootstrap'), // change this if necessary
-		),
+		), 
+		
 	// autoloading model and component classes
 	'import'=>array(
 		'application.models.*',
 		'application.components.*',
-		'bootstrap.widgets.*',
+		 'bootstrap.widgets.*',
 		 'bootstrap.helpers.TbHtml',
 			'bootstrap.helpers.TbHtml',
 			'bootstrap.helpers.TbArray',
-			'bootstrap.behaviors.TbWidget', 
+			'bootstrap.behaviors.TbWidget',  
 	),
 
 	'modules'=>array(
@@ -46,9 +49,12 @@ return array(
 			// enable cookie-based authentication
 			'allowAutoLogin'=>true,
 		),
-		'bootstrap' => array(
+		 'bootstrap' => array(
 			'class' => 'bootstrap.components.TbApi',
-		),
+		), 
+			/* 'booster' => array(
+					'class' => 'path.alias.to.booster.components.Booster',
+			), */
 		// uncomment the following to enable URLs in path-format
 		/*
 		'urlManager'=>array(
