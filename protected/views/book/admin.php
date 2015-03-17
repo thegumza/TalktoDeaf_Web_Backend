@@ -9,7 +9,7 @@
 ); */
 
 $this->menu=array(
-	array('label'=>'List Book', 'url'=>array('index')),
+	//array('label'=>'List Book', 'url'=>array('index')),
 	array('label'=>'Create Book', 'url'=>array('create')),
 );
 

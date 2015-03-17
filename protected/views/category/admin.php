@@ -9,7 +9,7 @@
 ); */
 
 $this->menu=array(
-	array('label'=>'List Category', 'url'=>array('index')),
+	//array('label'=>'List Category', 'url'=>array('index')),
 	array('label'=>'Create Category', 'url'=>array('create')),
 );
 

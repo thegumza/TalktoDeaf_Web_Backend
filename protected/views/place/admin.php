@@ -9,7 +9,7 @@
 ); */
 
 $this->menu=array(
-	array('label'=>'List Place', 'url'=>array('index')),
+	//array('label'=>'List Place', 'url'=>array('index')),
 	array('label'=>'Create Place', 'url'=>array('create')),
 );
 
